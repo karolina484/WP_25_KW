@@ -1,12 +1,9 @@
 package org.example;
 
-import javax.swing.*;
-
 public class Model {
     private double num1;
     private double num2;
-    private double result;
-    private String oper = "\0";
+    private String oper = "";
     private boolean firstEntered = false;
     private boolean justCalculated = false;
 
@@ -48,7 +45,7 @@ public class Model {
                     if (num2 == 0) {
                         display = "Nie można dzielić przez 0";
                         firstEntered = false;
-                        oper = "\0";
+                        oper = "";
                         justCalculated = true;
                         return;
                     }
@@ -56,7 +53,6 @@ public class Model {
                     break;
                 default: res = num1; break;
             }
-            result = res;
             num1 = res;
             setResultText(res);
             justCalculated = true;
@@ -72,9 +68,8 @@ public class Model {
         display = "0";
         num1 = 0;
         num2 = 0;
-        result = 0;
         firstEntered = false;
-        oper = "\0";
+        oper = "";
         justCalculated = false;
     }
 
@@ -120,7 +115,7 @@ public class Model {
                     if (num2 == 0) {
                         display = "Nie można dzielić przez 0";
                         firstEntered = false;
-                        oper = "\0";
+                        oper = "";
                         justCalculated = true;
                         return;
                     }
@@ -128,12 +123,11 @@ public class Model {
                     break;
                 default: return;
             }
-            result = res;
             setResultText(res);
 
             num1 = res;
             firstEntered = false;
-            oper = "\0";
+            oper = "";
             justCalculated = true;
         }
     }
